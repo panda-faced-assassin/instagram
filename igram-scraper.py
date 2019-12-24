@@ -29,20 +29,31 @@ def get_account_data(account):
     account_data_dict['account_num_follows'] = account.follows_count
     return account_data_dict
 
-# account_data_dicts = []
-# accounts = get_accounts() 
-# for account in accounts: 
-#     account_data = get_account_data(account)
-#     account_data_dicts.append(account_data)
-# print(account_data_dicts)
+account_data_dicts = []
+accounts = get_accounts() 
+for account in accounts: 
+    account_data = get_account_data(account)
+    account_data_dicts.append(account_data)
+print(account_data_dicts)
 
-# Get follower data
-followers = []
-accounts = get_accounts()
-for account in accounts:
-    sleep(1)
-    followers = instagram.get_followers(account.identifier, 10, 1, delayed=True)
-for follower in followers:
-    print(follower)
+# # Get follower data
+# followers = []
+# accounts = get_accounts()
+# for account in accounts:
+#     sleep(1)
+#     followers = instagram.get_followers(account.identifier, 10, 1, delayed=True)
+# for follower in followers:
+#     print(follower)
 
+# Get media comments
+# def get_media_comments_by_id():
+#     accounts = get_accounts()
+#     for account in accounts:
+
+for subject in subjects:
+    medias = instagram.get_medias(subject, 10)
+    media = medias[6]
+    print(media)
+    account = media.owner
+    print(account)
 
