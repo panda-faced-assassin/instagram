@@ -46,9 +46,9 @@ print(account_data_dicts)
 #     print(follower)
 
 # Get media comments
-# def get_media_comments_by_id():
-#     accounts = get_accounts()
-#     for account in accounts:
+def get_media_comments_by_id():
+    accounts = get_accounts()
+    for account in accounts:
 
 for subject in subjects:
     medias = instagram.get_medias(subject, 10)
